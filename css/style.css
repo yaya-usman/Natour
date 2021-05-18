@@ -34,7 +34,6 @@ body{
     height: 95vh;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%, 0 100%);
     position: relative;
-
 }
 
 /* logo */
@@ -55,12 +54,14 @@ body{
     top: 35%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 .title{
     color: #fff;
     text-transform: uppercase;   
-    backface-visibility: hidden;    /* this is added to avoid shakiness of the animation */
+    backface-visibility: hidden;    /* this is added to avoid shakiness of any animation we apply*/
+    margin-bottom: 40px;
 }
 
 
@@ -73,6 +74,8 @@ body{
     animation-name: moveInLeft;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+
     
 }
 
@@ -82,7 +85,69 @@ body{
     font-size: 20px;
     letter-spacing: 17.4px;
     animation: moveInRight 1.5s ease-out;
+    animation-fill-mode: backwards; 
 }
+
+
+/* button */
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);   /* offset-x | offset-y | blur-radius | color */
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.btn-white{
+    background-color: #fff;
+    color: #777;
+}
+
+.btn-animated{
+    animation: moveInBottom 1.5s ease-out 0.75s;   /*name|duration|timing-func|delay*/ 
+    animation-fill-mode: backwards;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+
+.btn:hover::after{
+    transform: scale(1.4,1.6);
+    opacity: 0;
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+
+
+
 
 
 /* ANIMATION RULES */
@@ -122,3 +187,17 @@ body{
         transform: translate(0);
     }
 }
+
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);   /* this moves it in from the right */
+    }
+
+    100%{
+        opacity: 1;                    
+        transform: translate(0);
+    }
+}
+
