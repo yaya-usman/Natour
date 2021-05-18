@@ -60,6 +60,7 @@ body{
 .title{
     color: #fff;
     text-transform: uppercase;   
+    backface-visibility: hidden;    /* this is added to avoid shakiness of the animation */
 }
 
 
@@ -67,14 +68,57 @@ body{
 .title-main{
     display: block;
     font-weight: 400;
-    font-size: 65px;
+    font-size: 60px;
     letter-spacing: 30px;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    
 }
 
 .title-sub{
     display: block;
     font-weight: 700;
     font-size: 20px;
-    letter-spacing: 17.5px;
+    letter-spacing: 17.4px;
+    animation: moveInRight 1.5s ease-out;
 }
 
+
+/* ANIMATION RULES */
+
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);  /*this moves it in from the left */
+    }
+    
+    80%{
+        transform: translateX(10px)
+    }
+
+    100%{
+        opacity: 1;                  /* completely visible */
+        transform: translate(0);    
+       
+    }
+}
+
+
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);   /* this moves it in from the right */
+    }
+    
+    80%{
+        transform: translateX(-10px)
+
+    }
+
+    100%{
+        opacity: 1;                    
+        transform: translate(0);
+    }
+}
