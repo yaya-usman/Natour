@@ -8,19 +8,25 @@ Dark green: #28b485
 */
 
 /* PRESETS */
-*{
+*,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html{
+   font-size: 62.5%;                /* 10px */
+}
+
+
 body{
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
     font-weight: 400;
     color: #777;
     line-height: 1.7;
-    padding: 30px;
+    padding: 3rem;
 }
 
 /* HEADINGS */
@@ -39,12 +45,12 @@ body{
 /* logo */
 .logo-container{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo{
-    height: 35px;
+    height: 3.5rem;
 }
 
 
@@ -61,7 +67,7 @@ body{
     color: #fff;
     text-transform: uppercase;   
     backface-visibility: hidden;    /* this is added to avoid shakiness of any animation we apply*/
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
 }
 
 
@@ -69,8 +75,8 @@ body{
 .title-main{
     display: block;
     font-weight: 400;
-    font-size: 60px;
-    letter-spacing: 30px;
+    font-size: 6rem;
+    letter-spacing: 3rem;
     animation-name: moveInLeft;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
@@ -82,8 +88,8 @@ body{
 .title-sub{
     display: block;
     font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 17.4px;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1.5s ease-out;
     animation-fill-mode: backwards; 
 }
@@ -94,22 +100,23 @@ body{
 .btn:visited{
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);   /* offset-x | offset-y | blur-radius | color */
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);   /* offset-x | offset-y | blur-radius | color */
 }
 
 .btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transform: translateY(-0.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 }
 
 .btn-white{
@@ -155,11 +162,11 @@ body{
 @keyframes moveInLeft {
     0%{
         opacity: 0;
-        transform: translateX(-100px);  /*this moves it in from the left */
+        transform: translateX(-10rem);  /*this moves it in from the left */
     }
     
     80%{
-        transform: translateX(10px)
+        transform: translateX(1rem)
     }
 
     100%{
@@ -174,11 +181,11 @@ body{
 @keyframes moveInRight{
     0%{
         opacity: 0;
-        transform: translateX(100px);   /* this moves it in from the right */
+        transform: translateX(10rem);   /* this moves it in from the right */
     }
     
     80%{
-        transform: translateX(-10px)
+        transform: translateX(-1rem)
 
     }
 
@@ -192,7 +199,7 @@ body{
 @keyframes moveInBottom{
     0%{
         opacity: 0;
-        transform: translateY(100px);   /* this moves it in from the right */
+        transform: translateY(10rem);   /* this moves it in from the right */
     }
 
     100%{
