@@ -29,7 +29,7 @@ body{
     padding: 3rem;
 }
 
-/* HEADINGS */
+/* HEADER SECTION */
 .header{
     background-image:linear-gradient(to bottom right,
     rgba(126, 213, 111, 0.80),
@@ -43,19 +43,19 @@ body{
 }
 
 /* logo */
-.logo-container{
+.header__logo-container{
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo{
+.header__logo{
     height: 3.5rem;
 }
 
 
 /* title */
-.title-container{
+.header__title-container{
     position: absolute;
     top: 35%;
     left: 50%;
@@ -72,7 +72,7 @@ body{
 
 
 
-.title-main{
+.title--main{
     display: block;
     font-weight: 400;
     font-size: 6rem;
@@ -85,7 +85,7 @@ body{
     
 }
 
-.title-sub{
+.title--sub{
     display: block;
     font-weight: 700;
     font-size: 2rem;
@@ -100,12 +100,13 @@ body{
 .btn:visited{
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 1.6rem;
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+  
 }
 
 
@@ -119,12 +120,12 @@ body{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 }
 
-.btn-white{
+.btn--white{
     background-color: #fff;
     color: #777;
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveInBottom 1.5s ease-out 0.75s;   /*name|duration|timing-func|delay*/ 
     animation-fill-mode: backwards;
 }
@@ -134,7 +135,7 @@ body{
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -148,7 +149,7 @@ body{
     opacity: 0;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
@@ -199,7 +200,7 @@ body{
 @keyframes moveInBottom{
     0%{
         opacity: 0;
-        transform: translateY(10rem);   /* this moves it in from the right */
+        transform: translateY(10rem);   /* this moves it in from the bottom */
     }
 
     100%{
