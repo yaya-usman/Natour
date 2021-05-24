@@ -4,7 +4,7 @@
   "description": "Landing page for tourists",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass sass/style.scss css/style.css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yaya-usman/Natour/issues"
   },
-  "homepage": "https://github.com/yaya-usman/Natour#readme"
+  "homepage": "https://github.com/yaya-usman/Natour#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.0"
+  }
 }
