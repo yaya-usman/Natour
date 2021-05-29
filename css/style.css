@@ -189,37 +189,30 @@ body {
 }
 
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 
 .u-margin-bottom-lg {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .u-margin-bottom-md {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 
 .u-margin-bottom-sm {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .u-margin-top-lg {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }
 
 .u-margin-top-huge {
-  margin-top: 10rem;
+  margin-top: 10rem !important;
 }
 
-.u-btn-center {
-  position: absolute;
-  left: 40%;
-  right: 50%;
-  width: 50%;
-}
-
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -229,6 +222,8 @@ body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
+  border: none;
+  cursor: pointer;
 }
 
 .btn::after {
@@ -655,6 +650,8 @@ body {
   border-bottom: 3px solid transparent;
   width: 90%;
   display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .form__input:focus {
@@ -687,6 +684,52 @@ body {
   visibility: hidden;
   -webkit-transform: translateY(-4.5rem);
           transform: translateY(-4.5rem);
+}
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.form__radio-input {
+  display: none;
+}
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 5px solid #55c57a;
+  position: absolute;
+  top: -.3rem;
+  left: -.4rem;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.form__radio-button::after {
+  content: "";
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #55c57a;
+  opacity: 0;
+}
+
+.form__radio-input:checked + .form__radio-label .form__radio-button::after {
+  opacity: 1;
 }
 
 .row {
@@ -807,7 +850,6 @@ body {
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
-  height: 50rem;
   background-size: cover;
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.3);
